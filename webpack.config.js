@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        tets: /\.js?$/,
+        test: /\.js?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -22,12 +22,10 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin([
-      {
-        inject: true,
-        template: './public/index.html',
-        filename: './index.html',
-      },
-    ]),
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: './public/index.html',
+      filename: './index.html',
+    }),
   ],
 };
