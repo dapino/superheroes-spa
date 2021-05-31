@@ -1,5 +1,5 @@
 const APIKEY = '7700e70b79ba8e47e54084c237a5ba1c';
-const APIURL = 'http://gateway.marvel.com/v1/public/characters';
+const APIURL = 'https://gateway.marvel.com/v1/public/characters';
 const HASH = '095feed6b4a5293f096874bcc8b506fe';
 // https://gateway.marvel.com:443/v1/public/characters?apikey=7700e70b79ba8e47e54084c237a5ba1c
 // https://gateway.marvel.com:443/v1/public/characters/1?apikey=7700e70b79ba8e47e54084c237a5ba1c
