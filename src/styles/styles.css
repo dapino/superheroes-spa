@@ -1,8 +1,41 @@
+:root {
+  --main-color: #ec1d24
+}
 body {
+  margin: 0;
   background: #ccc;
   font-family: sans-serif;
 }
 
+.navbar {
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.navbar__logo h1 {
+  margin: 0;
+}
+
+.navbar__logo a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem
+}
+.navbar__nav a{
+  color: white;
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: lighter;
+  padding: .4rem .8rem;
+}
 /* utils */
 .card {
   background-color: white;
@@ -19,7 +52,8 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   max-width: 80%;
-  margin: auto;
+  margin: 5rem auto 1rem;
+
 }
 
 .characters a {
@@ -43,5 +77,28 @@ body {
   text-align: center;
   padding: .5em;
   color: #444;
+  font-weight: lighter;
+}
+
+.pagination { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+.pagination__buttons { 
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+.pagination__button {
+  background-color:var(--main-color);
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+  padding: .2em 1em;
+  min-width: 5em;
+  text-align: center;
   font-weight: lighter;
 }
