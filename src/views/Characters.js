@@ -1,21 +1,31 @@
-import getHash from '../utils/getHash';
 import getData from '../utils/getData';
+import getHash from '../utils/getHash';
+import Pagination from '../components/Pagination';
 
 const Characters = async () => {
-  const id = getHash();
-  const data = await getData(id);
-  const character = data.data.results[0];
-  console.log(character);
+  // TODO: Refactor pagination in utils/pagination
+  const limit = 12;
+  const maxPages = Math.floor(1493 / limit);
+  const actualPage = () => {
+    return getHash(2) > 1 ? (getHash(2) > maxPages ? maxPages : getHash(2)) : 1;
+  };
+  const characters = await getData(0, limit, actualPage() * limit);
   const view = `
     <div class="characters">
-      <article class="character-card">
-        <img src="${character.thumbnail.path}/landscape_incredible.${character.thumbnail.extension}" alt="name">
-      </article>
-      <article class="character-card">
-        <h3>${character.name}</h3>
-        <h3>${character.description}</h3>
-      </article>
+      ${characters.data.results
+        .map(
+          (character) => `
+        <article class="character card">
+          <a href="#/character/${character.id}">
+            <img class="character__img" src="${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}" alt="name">
+            <h2 class="character__title">${character.name}</h2>
+          </a>
+        </article>
+      `
+        )
+        .join('')}
     </div>
+    ${Pagination(actualPage(), maxPages)}
   `;
   return view;
 };
