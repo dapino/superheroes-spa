@@ -7,10 +7,10 @@ const Home = async () => {
       ${characters.data.results
         .map(
           (character) => `
-        <article class="character">
+        <article class="character card">
           <a href="#/${character.id}">
-            <img src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="name">
-            <h2>${character.name}</h2>
+            <img class="character__img" src="${character.thumbnail.path}/standard_fantastic.${character.thumbnail.extension}" alt="name">
+            <h2 class="character__title">${character.name}</h2>
           </a>
         </article>
       `
