@@ -1,3 +1,4 @@
-const getHash = () => location.hash.slice(1).toLowerCase().split('/')[1] || '/';
-
+const getHash = (depth) => {
+  return location.hash.slice(1).toLowerCase().split('/')[depth] || '/';
+};
 export default getHash;

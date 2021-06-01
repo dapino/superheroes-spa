@@ -1,8 +1,12 @@
 const resolveRoutes = (route) => {
-  // if (route.length <= 3) {
-  return route === '/' ? route : '/:id';
-  // }
-  // return `/${route}`;
+  switch (route) {
+    case 'characters':
+      return '/characters/:page';
+    case 'character':
+      return '/character/:id';
+    default:
+      return '/';
+  }
 };
 
 export default resolveRoutes;
