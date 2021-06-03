@@ -8,14 +8,17 @@ const Character = async () => {
   const character = data.data.results[0];
   console.log(character);
   const view = `
-    <div class="characters">
-      <article class="character-card">
-        <img src="${character.thumbnail.path}/landscape_incredible.${character.thumbnail.extension}" alt="name">
-      </article>
-      <article class="character-card">
-        <h3>${character.name}</h3>
-        <p>${character.description}</p>
-      </article>
+    <div class="container">
+      <div class="character-detail card">
+        <article class="character-image">
+          <img src="${character.thumbnail.path}/portrait_uncanny.${character.thumbnail.extension}" alt="name">
+        </article>
+        <article class="character-content">
+          <h3>${character.name}</h3>
+          <p>${character.description}</p>
+          <a href="${character.comics.collectionURI}">Comics</a>
+        </article>
+      </div>
     </div>
   `;
   return view;
