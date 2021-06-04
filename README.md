@@ -1,2 +1,2 @@
 # Marvel SPA
-SPA to interact with marvel characters
+SPA to interact with marvel API characters
